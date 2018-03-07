@@ -26,14 +26,9 @@ public class Fighter {
         if (damageValue <= 0)
             return;
 
-        if(equipement.canBlockHit()) {
-            equipement.blockHitFrom(weapon);
-            return;
-        }
-
-        int damageToTake = damageValue - equipement.calculateTotalDamageResistance();
+        int damageToTake = damageValue - equipement.calculateTotalDamageResistanceTo(weapon);
         damageToTake = Math.max(damageToTake, 0);
-        System.out.println("damage taken "+damageToTake);
+//        System.out.println("damage taken "+damageToTake);
         hp -= damageToTake;
     }
 

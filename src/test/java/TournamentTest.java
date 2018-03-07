@@ -18,8 +18,8 @@ public class TournamentTest {
 
 
     /**
-     * A fighters.Swordsman has 100 hit points and use a 1 hand sword that does 5 dmg
-     * A fighters.Viking has 120 hit points and use a 1 hand axe that does 6 dmg
+     * A Swordsman has 100 hit points and use a 1 hand sword that does 5 dmg
+     * A Viking has 120 hit points and use a 1 hand axe that does 6 dmg
      */
     @Test
     public void SwordsmanVsViking() {
@@ -56,7 +56,7 @@ public class TournamentTest {
     }
 
     /**
-     * an fighters.Highlander as 150 hit points and fight with a Great Sword
+     * an Highlander as 150 hit points and fight with a Great Sword
      * a Great Sword is a two handed sword deliver 12 damages, but can attack only 2 every 3
      * an armor : reduce all received damages by 3 & reduce delivered damages by one
      */
@@ -76,20 +76,20 @@ public class TournamentTest {
     }
 
     /**
-     * a vicious fighters.Swordsman is a fighters.Swordsman that put poison on his weapon.
+     * a vicious Swordsman is a Swordsman that put poison on his weapon.
      * poison add 20 damages on two first blows
-     * a veteran fighters.Highlander goes Berserk once his hit points are under 30% of his initial total
+     * a veteran Highlander goes Berserk once his hit points are under 30% of his initial total
      * once Berserk, he doubles his damages
      */
     /*@Test
     public void ViciousSwordsmanVsVeteranHighlander() {
 
-        fighters.Swordsman swordsman = new fighters.Swordsman("Vicious")
+        Swordsman swordsman = new Swordsman("Vicious");
                 .equip("axe")
                 .equip("buckler")
                 .equip("armor");
 
-        fighters.Highlander highlander = new fighters.Highlander("Veteran");
+        Highlander highlander = new Highlander("Veteran");
 
         swordsman.engage(highlander);
 
