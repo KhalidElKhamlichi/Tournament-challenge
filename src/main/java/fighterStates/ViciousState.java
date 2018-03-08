@@ -17,10 +17,10 @@ public class ViciousState implements FighterState {
     public int getDamageOutput() {
         if(remainingPoisonHits > 0) {
             remainingPoisonHits--;
-            return fighter.calculateTotalDamageOutput() + poisonDamage;
+            return fighter.calculateEquipmentDamageOutput() + poisonDamage;
         }
 
-        return fighter.calculateTotalDamageOutput();
+        return fighter.calculateEquipmentDamageOutput();
 
     }
 }

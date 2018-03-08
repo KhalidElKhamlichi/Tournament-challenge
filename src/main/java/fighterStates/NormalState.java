@@ -13,6 +13,6 @@ public class NormalState implements FighterState {
 
     @Override
     public int getDamageOutput() {
-        return fighter.calculateTotalDamageOutput();
+        return fighter.calculateEquipmentDamageOutput();
     }
 }

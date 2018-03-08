@@ -17,8 +17,8 @@ public class BerserkState implements FighterState {
 
         triggerValue = 0.3;
         if(fighter.getHp() <= fighter.getInitialHp()* triggerValue)
-            return fighter.calculateTotalDamageOutput() * damageMultiplier;
+            return fighter.calculateEquipmentDamageOutput() * damageMultiplier;
 
-        return fighter.calculateTotalDamageOutput();
+        return fighter.calculateEquipmentDamageOutput();
     }
 }

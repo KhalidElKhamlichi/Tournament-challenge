@@ -53,7 +53,7 @@ public class Fighter {
         return state.getDamageOutput();
     }
 
-    public int calculateTotalDamageOutput() {
+    public int calculateEquipmentDamageOutput() {
         return equipment.calculateTotalDamageOutput();
     }
 
