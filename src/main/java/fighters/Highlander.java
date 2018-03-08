@@ -10,7 +10,8 @@ public class Highlander extends Fighter {
     }
 
     public Highlander(String veteran) {
-
+        this();
+        super.setState(new BerserkState(this));
     }
     public Highlander equip(String equipementPiece) {
         super.equip(equipementPiece);

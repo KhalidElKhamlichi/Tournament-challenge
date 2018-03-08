@@ -81,10 +81,10 @@ public class TournamentTest {
      * a veteran Highlander goes Berserk once his hit points are under 30% of his initial total
      * once Berserk, he doubles his damages
      */
-    /*@Test
+    @Test
     public void ViciousSwordsmanVsVeteranHighlander() {
 
-        Swordsman swordsman = new Swordsman("Vicious");
+        Swordsman swordsman = new Swordsman("Vicious")
                 .equip("axe")
                 .equip("buckler")
                 .equip("armor");
@@ -96,6 +96,6 @@ public class TournamentTest {
         assertThat(swordsman.hitPoints()).isEqualTo(1);
         assertThat(highlander.hitPoints()).isEqualTo(0);
 
-    }*/
+    }
 
 }

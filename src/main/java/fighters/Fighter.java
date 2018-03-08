@@ -4,21 +4,26 @@ import equipement.*;
 
 public class Fighter {
 
+    private FighterState state = new NormalFighter(this);
+
     private Equipement equipement = new Equipement();
     private int hp;
 
+    private int initialHp;
+
     public Fighter equip(String equipementPiece) {
+
         if(equipementPiece.equals("armor")) {
-            equipement.armor = new Armor();
+            equipement.armor = EquipementFactory.getArmor();
             return this;
         }
 
         if(equipementPiece.equals("buckler")) {
-            equipement.buckler = new Buckler();
+            equipement.buckler = EquipementFactory.getBuckler();
             return this;
         }
 
-        equipement.weapon = WeaponFactory.getWeapon(equipementPiece);
+        equipement.weapon = EquipementFactory.getWeapon(equipementPiece);
         return this;
     }
 
@@ -28,12 +33,19 @@ public class Fighter {
 
         int damageToTake = damageValue - equipement.calculateTotalDamageResistanceTo(weapon);
         damageToTake = Math.max(damageToTake, 0);
-//        System.out.println("damage taken "+damageToTake);
+        System.out.println("damage taken "+damageToTake);
         hp -= damageToTake;
+        System.out.println("current health "+hp);
     }
 
     public int getDamageOutput() {
         //System.out.println("dmg output "+equipement.calculateTotalDamageOutput());
+        int dmg = state.getDamageOutput();
+//        System.out.println("dmg output "+dmg);
+        return dmg;
+    }
+
+    public int calculateTotalDamageOutput() {
         return equipement.calculateTotalDamageOutput();
     }
 
@@ -42,6 +54,7 @@ public class Fighter {
     }
 
     public void setHp(int hp) {
+        this.initialHp = hp;
         this.hp = hp;
     }
 
@@ -65,4 +78,11 @@ public class Fighter {
         }
     }
 
+    public void setState(FighterState state) {
+        this.state = state;
+    }
+
+    public int getInitialHp() {
+        return initialHp;
+    }
 }

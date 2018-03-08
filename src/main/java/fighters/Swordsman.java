@@ -9,6 +9,11 @@ public class Swordsman extends Fighter {
         equip("sword");
     }
 
+    public Swordsman(String input) {
+        this();
+        super.setState(new ViciousState(this));
+    }
+
     public int hitPoints() {
         return super.getHp();
     }
