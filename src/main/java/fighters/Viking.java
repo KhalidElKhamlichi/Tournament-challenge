@@ -19,9 +19,4 @@ public class Viking extends Fighter {
         return this;
     }
 
-    @Override
-    public void attack(Fighter fighter) {
-
-        super.attack(fighter);
-    }
 }

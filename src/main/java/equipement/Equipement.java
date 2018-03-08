@@ -10,7 +10,6 @@ public class Equipement {
         int totalDmg = weapon.getDamage();
         if(armor != null)
              totalDmg -= armor.damageReduction;
-        //System.out.println("weapon dmg "+totalDmg);
 
         return totalDmg;
     }

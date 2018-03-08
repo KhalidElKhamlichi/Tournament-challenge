@@ -1,9 +1,13 @@
-package fighters;
+package fighterStates;
 
-public class NormalFighter implements FighterState {
+
+import fighters.Fighter;
+
+public class NormalState implements FighterState {
 
     private Fighter fighter;
-    public NormalFighter(Fighter fighter) {
+
+    public NormalState(Fighter fighter) {
         this.fighter = fighter;
     }
 

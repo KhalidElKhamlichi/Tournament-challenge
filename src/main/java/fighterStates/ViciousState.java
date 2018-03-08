@@ -1,6 +1,10 @@
-package fighters;
+package fighterStates;
 
-public class ViciousState implements FighterState{
+import fighterStates.FighterState;
+import fighters.Fighter;
+
+public class ViciousState implements FighterState {
+
     private Fighter fighter;
     private final int initialPoisonHits = 2;
     private final int poisonDamage = 20;

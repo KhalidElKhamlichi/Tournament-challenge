@@ -1,4 +1,4 @@
-package fighters;
+package fighterStates;
 
 public interface FighterState {
 

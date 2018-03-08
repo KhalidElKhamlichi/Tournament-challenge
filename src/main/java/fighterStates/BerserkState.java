@@ -1,4 +1,6 @@
-package fighters;
+package fighterStates;
+
+import fighters.Fighter;
 
 public class BerserkState implements FighterState {
 
@@ -11,11 +13,9 @@ public class BerserkState implements FighterState {
 
     @Override
     public int getDamageOutput() {
-        System.out.println("BERSERK !! "+fighter.getHp() +" "+ fighter.getInitialHp()*0.3);
 
         if(fighter.getHp() <= fighter.getInitialHp()*0.3)
             return fighter.calculateTotalDamageOutput() * damageMultiplier;
-
 
         return fighter.calculateTotalDamageOutput();
     }

@@ -1,5 +1,7 @@
 package fighters;
 
+import fighterStates.BerserkState;
+
 public class Highlander extends Fighter {
 
     private final int hp = 150;

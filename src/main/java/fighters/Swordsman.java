@@ -1,5 +1,7 @@
 package fighters;
 
+import fighterStates.ViciousState;
+
 public class Swordsman extends Fighter {
 
     private final int hp = 100;
