@@ -1,6 +1,6 @@
 package equipement;
 
-public class Equipement {
+public class Equipment {
 
     public Weapon weapon;
     public Armor armor;
@@ -14,16 +14,22 @@ public class Equipement {
         return totalDmg;
     }
 
-    public int calculateTotalDamageResistanceTo(Weapon weapon) {
+    public int calculateTotalDamageResistance() {
 
-        if (buckler != null) {
-            if(buckler.blockHitFrom(weapon))
-                return Integer.MAX_VALUE;
-        }
         if(armor != null) {
             return armor.damageResistance;
         }
         return 0;
+    }
+
+    public boolean canBlockHit() {
+        if(buckler == null)
+            return false;
+        return buckler.canBlockHit();
+    }
+
+    public void blockHitFrom(Weapon weapon) {
+        buckler.blockHitFrom(weapon);
     }
 
 }

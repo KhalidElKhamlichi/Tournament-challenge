@@ -20,8 +20,8 @@ public class Swordsman extends Fighter {
         return super.getHp();
     }
 
-    public Swordsman equip(String equipementPiece) {
-        super.equip(equipementPiece);
+    public Swordsman equip(String equipmentPiece) {
+        super.equip(equipmentPiece);
         return this;
     }
 }

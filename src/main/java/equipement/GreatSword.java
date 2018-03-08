@@ -2,7 +2,7 @@ package equipement;
 
 public class GreatSword implements Weapon {
 
-    public final int damage = 12;
+    private final int damage = 12;
 
     private final int maxConsecutiveHits = 2;
 

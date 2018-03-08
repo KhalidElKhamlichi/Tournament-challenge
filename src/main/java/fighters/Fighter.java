@@ -8,25 +8,16 @@ public class Fighter {
 
     private FighterState state = new NormalState(this);
 
-    private Equipement equipement = new Equipement();
+    private Equipment equipment = new Equipment();
 
     private int hp;
     private int initialHp;
 
-    public Fighter equip(String equipementPiece) {
+    public Fighter equip(String equipmentPiece) {
 
-        if(equipementPiece.equals("armor")) {
-            equipement.armor = EquipementFactory.getArmor();
-            return this;
-        }
-
-        if(equipementPiece.equals("buckler")) {
-            equipement.buckler = EquipementFactory.getBuckler();
-            return this;
-        }
-
-        equipement.weapon = EquipementFactory.getWeapon(equipementPiece);
+        EquipmentPopulator.populate(equipment, equipmentPiece);
         return this;
+
     }
 
     public void engage(Fighter fighter) {
@@ -42,14 +33,18 @@ public class Fighter {
     }
 
     public void attack(Fighter fighter) {
-        fighter.takeDamage(getDamageOutput(), equipement.weapon);
+        fighter.takeDamage(getDamageOutput(), equipment.weapon);
     }
 
     public void takeDamage(int damageValue, Weapon weapon) {
         if (damageValue <= 0)
             return;
+        if(equipment.canBlockHit()) {
+            equipment.blockHitFrom(weapon);
+            return;
+        }
 
-        int damageToTake = damageValue - equipement.calculateTotalDamageResistanceTo(weapon);
+        int damageToTake = damageValue - equipment.calculateTotalDamageResistance();
         damageToTake = Math.max(damageToTake, 0);
         hp -= damageToTake;
     }
@@ -59,7 +54,7 @@ public class Fighter {
     }
 
     public int calculateTotalDamageOutput() {
-        return equipement.calculateTotalDamageOutput();
+        return equipment.calculateTotalDamageOutput();
     }
 
     public boolean isDead() {

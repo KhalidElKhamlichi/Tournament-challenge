@@ -14,8 +14,8 @@ public class Viking extends Fighter {
     }
 
 
-    public Viking equip(String equipementPiece) {
-        super.equip(equipementPiece);
+    public Viking equip(String equipmentPiece) {
+        super.equip(equipmentPiece);
         return this;
     }
 

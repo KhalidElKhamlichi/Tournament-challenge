@@ -6,6 +6,7 @@ public class BerserkState implements FighterState {
 
     private final int damageMultiplier = 2;
     private Fighter fighter;
+    private double triggerValue = 0.3;
 
     public BerserkState(Fighter fighter) {
         this.fighter = fighter;
@@ -14,7 +15,8 @@ public class BerserkState implements FighterState {
     @Override
     public int getDamageOutput() {
 
-        if(fighter.getHp() <= fighter.getInitialHp()*0.3)
+        triggerValue = 0.3;
+        if(fighter.getHp() <= fighter.getInitialHp()* triggerValue)
             return fighter.calculateTotalDamageOutput() * damageMultiplier;
 
         return fighter.calculateTotalDamageOutput();

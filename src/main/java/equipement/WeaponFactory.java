@@ -1,6 +1,6 @@
 package equipement;
 
-public class EquipementFactory {
+public class WeaponFactory {
 
     public static Weapon getWeapon(String input) {
         if(input.equals("axe"))
@@ -13,11 +13,4 @@ public class EquipementFactory {
         return null;
     }
 
-    public static Armor getArmor() {
-        return new Armor();
-    }
-
-    public static Buckler getBuckler() {
-        return new Buckler();
-    }
 }

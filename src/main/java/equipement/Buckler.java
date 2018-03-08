@@ -8,20 +8,20 @@ public class Buckler {
 
     private int consecutiveHits = 0;
 
-    private boolean canBlockHit() {
-        return durability > 0 && consecutiveHits < maxConsecutiveHits;
-    }
-
-    public boolean blockHitFrom(Weapon weapon) {
-        if(canBlockHit()) {
-            consecutiveHits++;
-            if (weapon instanceof BucklerDestroyer) {
-                durability--;
-            }
+    public boolean canBlockHit() {
+        if (durability > 0 && consecutiveHits < maxConsecutiveHits) {
             return true;
         }
-
         consecutiveHits = 0;
         return false;
+    }
+
+    public void blockHitFrom(Weapon weapon) {
+
+        consecutiveHits++;
+        if (weapon instanceof BucklerDestroyer) {
+            durability--;
+        }
+
     }
 }

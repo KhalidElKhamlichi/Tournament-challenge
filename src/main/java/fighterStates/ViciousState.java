@@ -1,6 +1,5 @@
 package fighterStates;
 
-import fighterStates.FighterState;
 import fighters.Fighter;
 
 public class ViciousState implements FighterState {
