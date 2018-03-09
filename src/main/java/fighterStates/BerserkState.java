@@ -15,7 +15,6 @@ public class BerserkState implements FighterState {
     @Override
     public int getDamageOutput() {
 
-        triggerValue = 0.3;
         if(fighter.getHp() <= fighter.getInitialHp()* triggerValue)
             return fighter.calculateEquipmentDamageOutput() * damageMultiplier;
 
