@@ -45,7 +45,7 @@ public class Fighter {
         }
 
         int damageToTake = damageValue - equipment.calculateTotalDamageResistance();
-        damageToTake = Math.max(damageToTake, 0);
+        
         hp -= damageToTake;
     }
 
