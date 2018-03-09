@@ -1,8 +1,11 @@
 package equipement;
 
+import Exceptions.UnknownWeaponException;
+
 public class WeaponFactory {
 
     public static Weapon getWeapon(String input) {
+
         if(input.equals("axe"))
             return new Axe();
         if(input.equals("sword"))
@@ -10,7 +13,7 @@ public class WeaponFactory {
         if (input.equals("great sword"))
             return new GreatSword();
 
-        return null;
+        throw new UnknownWeaponException();
     }
 
 }
