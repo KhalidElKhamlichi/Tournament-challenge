@@ -36,6 +36,14 @@ public class Fighter {
         fighter.takeDamage(getDamageOutput(), equipment.weapon);
     }
 
+    public int getDamageOutput() {
+        return state.getDamageOutput();
+    }
+
+    public int calculateEquipmentDamageOutput() {
+        return equipment.calculateTotalDamageOutput();
+    }
+
     public void takeDamage(int damageValue, Weapon weapon) {
         if (damageValue <= 0)
             return;
@@ -45,16 +53,8 @@ public class Fighter {
         }
 
         int damageToTake = damageValue - equipment.calculateTotalDamageResistance();
-        
+
         hp -= damageToTake;
-    }
-
-    public int getDamageOutput() {
-        return state.getDamageOutput();
-    }
-
-    public int calculateEquipmentDamageOutput() {
-        return equipment.calculateTotalDamageOutput();
     }
 
     public boolean isDead() {
